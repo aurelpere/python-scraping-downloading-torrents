@@ -1,0 +1,10 @@
+pylint
+pytest
+blue
+pytest
+pytest-cov
+libtorrent
+requests
+pandas
+bs4
+numpy
