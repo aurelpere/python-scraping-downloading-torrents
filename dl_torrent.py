@@ -6,11 +6,7 @@ import re
 import json
 import os
 import time
-
-# @click.command()
-# @click.option('-a','--author',default=0, help='-a "author_name" that will be searched in tags')
-# @click.option('-p','--path', default='.', help='-p "path_name_to_save_your_torrent_file" (default ".")')
-# @click.option('-k','--keywords', help='-k "key words to search" (ex: Thrones Game mkv)')
+import argparse
 
 
 def requests_retry_session(
@@ -166,4 +162,9 @@ def get_torrent(keywords, keywords2='', path='.', file='._'):
 
 
 if __name__ == '__main__':
-    get_torrent('dune')
+    parser = argparse.ArgumentParser(description='python dl_torrents_from_csv.py csvfile year')
+    parser.add_argument('-k','--keywords',nargs='+',required=True, metavar='keywords', type=str,
+                        help='keywords to search for .torrent file to download')
+    args = vars(parser.parse_args())
+    get_torrent(' '.join(args['keywords']))
+
