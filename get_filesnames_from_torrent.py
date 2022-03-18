@@ -1,5 +1,10 @@
-import libtorrent as lt
+#!/usr/bin/python3
+# coding: utf-8
+"""
+this is get_filesnames_from_torrent.py
+"""
 import warnings
+import libtorrent as lt
 
 
 def get_files_names_from_torrent(torrentfile):

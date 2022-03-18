@@ -23,20 +23,13 @@ def test_get_torrents_from_csv():
     )  ###
     df.to_csv('csvfile.csv', sep=';', header=True, index=False)
     get_torrents_from_csv('csvfile.csv', year)
-    assert (
-        os.path.isfile(
-            '{}/the-ghost-writer-2010-multi-bluray-1080p-x264-ac3-re-at-2.torrent'.format(
-                year
-            )
-        )
-        == True
-    )  ###
+    assert (os.path.isfile(
+        '{}/the-ghost-writer-2010-multi-bluray-1080p-x264-ac3-re-at-2.torrent'.
+        format(year)) == True)  ###
     os.remove('csvfile.csv')
     os.remove(
-        '{}/the-ghost-writer-2010-multi-bluray-1080p-x264-ac3-re-at-2.torrent'.format(
-            year
-        )
-    )
+        '{}/the-ghost-writer-2010-multi-bluray-1080p-x264-ac3-re-at-2.torrent'.
+        format(year))
 
 
 if __name__ == '__main__':
