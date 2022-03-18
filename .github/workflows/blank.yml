@@ -23,7 +23,7 @@ jobs: # This workflow contains a single job called "build"
         make format
     - name: make a test coverage badge with genbadge
       run: |
-        make badge
+        make coverage_badge
     - name: Commit files # commit the badge file into the repository
       run: |
         make git
