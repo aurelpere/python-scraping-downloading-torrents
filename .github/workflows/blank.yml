@@ -9,8 +9,8 @@ jobs: # This workflow contains a single job called "build"
       uses: actions/setup-python@v1
       with:
         python-version: 3.8
-    - name: Install dependencies 
-      run: | # Runs commands using the runners shell
+    - name: Install dependencies # Runs commands using the runners shell
+      run: |
         make install 
     - name: Lint with pylint
       run: |
