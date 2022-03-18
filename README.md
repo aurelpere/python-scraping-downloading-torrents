@@ -1,4 +1,4 @@
-[![Test-Lint-Format](https://github.com/aurelpere/python-scraping-downloading-torrents/actions/workflows/blank.yml/badge.svg)](https://github.com/aurelpere/python-scraping-downloading-torrents/actions/workflows/blank.yml) ![test-coverage badge](./coverage-badge.svg)
+[![Test-Lint-Format](https://github.com/aurelpere/python-scraping-downloading-torrents/actions/workflows/blank.yml/badge.svg)](https://github.com/aurelpere/python-scraping-downloading-torrents/actions/workflows/blank.yml) ![test-coverage badge](./coverage-badge.svg) [![Maintainability](https://api.codeclimate.com/v1/badges/e502e3b52b4f990dd355/maintainability)](https://codeclimate.com/github/aurelpere/python-scraping-downloading-torrents/maintainability)
 
 
 # scraping-downloading-torrents
