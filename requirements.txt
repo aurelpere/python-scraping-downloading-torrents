@@ -1,9 +1,11 @@
 pylint
 pytest
-blue
-pytest
 pytest-cov
+yapf
+genbadge
+defusedxml
 libtorrent
 requests
 pandas
 bs4
+coverage
