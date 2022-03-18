@@ -26,10 +26,7 @@ jobs: # This workflow contains a single job called "build"
         make badge
     - name: Commit files # commit the badge file into the repository
       run: |
-      	git config --local user.email "aurel.pere@gmail.com"
-        git config --local user.name "aurelpere"
-        git add coverage-badge.svg
-        git commit -m "Updating the test coverage badge"
+	    make git
     - name: Push changes # push the output file to your repo
       uses: ad-m/github-push-action@master
       with:
