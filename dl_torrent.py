@@ -81,11 +81,12 @@ def api_dlinfo_call(keywords, _, keywords2=''):
         print('\n')
         request1 = requests_retry_session(session=session).get(
             url=base_url)  # ,headers=header)
+        #session.close()?
         print(f'API request status code: {request1.status_code}')
         print('\n')
         if request1.status_code == 200:
             datalist = json.loads(request1.text)
-            if len(datalist) == 0:
+            if not datalist:
                 if keywords2 == '':
                     print("no torrent")
                     print('\n')
@@ -93,12 +94,13 @@ def api_dlinfo_call(keywords, _, keywords2=''):
                 base_url = f'https://www.sharewood.tv/api/{_}/search?name={keywords2}'
                 print(base_url)
                 print('\n')
-                request1 = requests_retry_session(session=session).get(
+                request1_keyword2 = requests_retry_session(session=session).get(
                     url=base_url)
-                print(f'API request status code: {request1.status_code}')
+                print(f'API request status code: {request1_keyword2.status_code}')
                 print('\n')
-                if request1.status_code == 200:
-                    datalist = json.loads(request1.text)
+                if request1_keyword2.status_code == 200:
+                    datalist = json.loads(request1_keyword2.text)
+                    request1_keyword2.close()
                     if len(datalist) == 0:
                         print("no torrent")
                         print('\n')
@@ -146,12 +148,15 @@ def api_dltorrent_call(torrent_url, path, _):
                     os.mkdir(path)
             with open(f'{path}/{fname}', 'wb') as out_file:
                 out_file.write(request2.content)
+            request2.close()
             print(f'{path}/{fname} téléchargé')
             print('\n')
             time.sleep(3)
             return f'{path}/{fname}'
+        request2.close()
 
     except (Exception, ) as error2:
+        request2.close()
         print(f'erreur de telechargement {error2}')
         print('\n')
         time.sleep(3)

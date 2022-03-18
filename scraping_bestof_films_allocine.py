@@ -31,7 +31,7 @@ def soupduration(soup, decennie, annee, page_nb):
         attrs={'class': 'meta-body-item meta-body-info'})
     soupdurationtxt = ''
     for k in soupdurationlist:
-        soupdurationtxt += html.unescape(str(k))
+        soupdurationtxt = html.unescape(str(k))
     durations = re.findall('(.+)(?=min)', soupdurationtxt)
     if page_nb == 6 and str(int(decennie) + annee) == '2000':
         durations.insert(4, '-')
