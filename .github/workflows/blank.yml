@@ -26,7 +26,7 @@ jobs: # This workflow contains a single job called "build"
         make badge
     - name: Commit files # commit the badge file into the repository
       run: |
-	    make git
+        make git
     - name: Push changes # push the output file to your repo
       uses: ad-m/github-push-action@master
       with:
