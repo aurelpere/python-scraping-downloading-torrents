@@ -6,7 +6,7 @@ format:
 lint:
 	for i in *.py; do pylint --disable=R,C -sy $$i; done
 test:
-	pytest -v --cov=. *.py --cov-report xml:reports/coverage/coverage.xml
+	pytest -vv --cov=. *.py --cov-report xml:reports/coverage/coverage.xml
 badge:
 	genbadge coverage
 git:
