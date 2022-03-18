@@ -13,5 +13,5 @@ git:
 	git config --local user.email "aurel.pere@gmail.com"
 	git config --local user.name "aurelpere"
 	git add coverage-badge.svg
-	git commit -m "Updating the test coverage badge"
+	git commit --allow-empty -m "Updating the test coverage badge"
 all: install format lint test coverage_badge
