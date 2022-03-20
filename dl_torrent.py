@@ -165,7 +165,7 @@ def api_dltorrent_call(torrent_url, path, _):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description='python dl_torrents_from_csv.py csvfile year')
+        description='python dl_torrents.py -k your keywords')
     parser.add_argument(
         '-k',
         '--keywords',

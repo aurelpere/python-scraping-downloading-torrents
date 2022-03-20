@@ -41,16 +41,16 @@ def get_torrents_from_csv(csv, year):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description='python dl_torrents_from_csv.py csvfile year')
+        description='python dl_torrents_from_csv.py -c csvfile.csv -y year')
     parser.add_argument(
-        '-csv',
+        '-c',
         '--csv',
         required=True,
         metavar='csvfile.csv',
         type=str,
         help='csvfile to process from to download the .torrent files')
     parser.add_argument(
-        '-year',
+        '-y',
         '--year',
         required=True,
         metavar='year',
